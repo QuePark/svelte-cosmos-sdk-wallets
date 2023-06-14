@@ -1,0 +1,1 @@
+# svelte-cosmos-sdk-wallets
