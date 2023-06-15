@@ -29,7 +29,12 @@
     on:click={onClick}>
     {label}
   </button>
-  <Modal modalClassName={modalClassName} bind:showModal={showModal} on:click={onClick}></Modal>
+  <Modal modalClassName={modalClassName} bind:showModal={showModal} on:click={onClick}>
+    <ul class="flex justify-center flex-col w-full">
+        <Button buttonClassName="{buttonClassName} btn-neutral" label="Keplr" func={() => console.log("Keplr")}>Keplr</Button>
+        <Button buttonClassName="{buttonClassName} btn-neutral" label="Cosmostation" func={() => console.log("Cosmostation")}>Cosmostation</Button>
+    </ul>
+  </Modal>
   
   <style>
   .sveltio-button {
