@@ -20,7 +20,13 @@
     }
   </script>
   
-  <button type="button" class="btn-radius btn-mh-2 {buttonClassName === '' ? 'btn btn-neutral' : buttonClassName}" on:click={onClick}>{label}</button>
+<button type="button" class="btn-radius btn-mh-2 {buttonClassName === '' ? 'btn btn-neutral' : buttonClassName}" on:click={onClick}>
+    {#if showModal}
+    <span class="loading loading-spinner"></span>loading
+    {:else}
+    {label}
+    {/if}
+</button>
   <Modal modalClassName={modalClassName} bind:showModal={showModal} on:click={onClick}>
     <ul class="flex justify-center flex-col w-full">
         <Button buttonClassName="{innerButtonClassName} btn-neutral" func={() => console.log("Keplr")}>
