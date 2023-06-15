@@ -13,7 +13,9 @@
     <div class="modal {showModal ? 'modal-open': ''} {modalClassName === '' ? 'h-1/6' : modalClassName} h-fit md:min-w-fit md:w-full">
         <slot />
         {#if message !== ''}
-        <button class="sveltio-button sveltio-button--primary sveltio-button--small mt-8" on:click={() => showModal = false}>{message}</button>
+        <button class="btn btn-circle" on:click={() => showModal = false}>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
         {/if}
     </div>
   </div>
@@ -63,35 +65,11 @@
     color: white;
 }
 
-.sveltio-button {
-        font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        border: 0;
-        border-radius: 5000px;
-        cursor: pointer;
-        display: inline-block;
-        line-height: 1;
-    }
-    .sveltio-button--primary {
-        color: #1b116e;
-        background-color: #6bedb5;
-    }
-    .sveltio-button--small {
-        font-size: 12px;
-        padding: 10px 16px;
-    }
-    .sveltio-button--primary:hover {
-        color: #1b116e;
-        background-color: #55bd90;
-    }
-    .sveltio-button--primary:active {
-        background-color: #55bd90;
-        border: solid 1px #55bd90;
-    }
-    
-    .sveltio-button--primary:disabled {
-        color: #1b116e;
-        opacity: 0.5;
-        background-color: #6bedb5;
-    }
+.btn-radius {
+    border-radius: 100px;
+}
+
+.btn-mh-2 {
+    min-height: 2.5rem;
+}
 </style>
