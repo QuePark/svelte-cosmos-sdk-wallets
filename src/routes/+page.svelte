@@ -1,3 +1,11 @@
-<h1>Welcome to your library project</h1>
+<script>
+	import WalletConnectButton from "$lib/WalletConnectButton.svelte";
+
+</script>
+
+<div class="bg-red-400">
+    <h1>Welcome to your library project</h1>
 <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+</div>
+<WalletConnectButton buttonClassName="btn-neutral" primary label="Connect" />
