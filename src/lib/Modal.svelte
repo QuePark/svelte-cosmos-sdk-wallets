@@ -10,10 +10,10 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore missing-declaration -->
   <div class="backdrop" class:promo={isPromo} on:click|self>
-    <div class="modal {showModal ? 'modal-open': ''} {modalClassName === '' ? 'h-1/6' : modalClassName} h-fit">
+    <div class="modal {showModal ? 'modal-open': ''} {modalClassName === '' ? 'h-1/6' : modalClassName} h-fit md:min-w-fit md:w-full">
         <slot />
         {#if message !== ''}
-        <button class="sveltio-button sveltio-button--primary sveltio-button--small mt-auto" on:click={() => showModal = false}>{message}</button>
+        <button class="sveltio-button sveltio-button--primary sveltio-button--small mt-8" on:click={() => showModal = false}>{message}</button>
         {/if}
     </div>
   </div>
@@ -36,10 +36,10 @@
 }
 
 .modal {
-    padding: 50px;
+    padding: 2rem;
     border-radius: 10px;
     overflow-y: auto;
-    max-width: 700px;
+    min-width: 500px;
     width: auto;
     text-align: center;
     background-color: white;
@@ -49,6 +49,13 @@
     justify-content: center;
     position: relative;
     margin: auto;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        min-width: fit-content;
+        padding: auto;
+    }
 }
 
 .promo .modal {
