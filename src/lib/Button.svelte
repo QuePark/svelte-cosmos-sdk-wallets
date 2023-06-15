@@ -7,4 +7,10 @@
     }
 </script>
 
-<button class="btn my-4 mx-auto min-w-min w-3/5 {buttonClassName}" on:click={onClick}><slot /></button>
+<button class="btn btn-custom my-4 mx-auto min-w-fit w-52 {buttonClassName}" on:click={onClick}><slot /></button>
+
+<style>
+.btn-custom {
+    text-transform: none;
+}
+</style>
